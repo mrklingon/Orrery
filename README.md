@@ -4,7 +4,7 @@ Code for Orrery simulation on Adafruit devices
 
 Three versions of a simple four planet Orrery:
 
-* orrery.js - Javascript/Makecode version for the Circuit Playground
+* orrery.js - Javascript/Makecode version for the Circuit Playground - https://makecode.com/_Eaf5qWXAf4Rt for the Makecode IDE version
 
 * orrery.py - Circuit Python version for the Circuit Playground
 
