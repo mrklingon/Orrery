@@ -4,7 +4,7 @@ input.onGesture(Gesture.Shake, function () {
     light.showAnimation(light.rainbowAnimation, 500)
     period = [24, 62, 100, 188]
     planets = ["Mercury", "Venus", "Earth", "Mars"]
-    pix = [light.rgb(10, 10, 10), Colors.Yellow, Colors.Green, Colors.Red]
+    pix = [light.rgb(25, 25, 25), Colors.Yellow, Colors.Green, Colors.Red]
     loc = [Math.randomRange(0, 9), Math.randomRange(0, 9), Math.randomRange(0, 9), Math.randomRange(0, 9)]
     counter = [0, 0, 0, 0]
     light.setAll(0x000000)
@@ -31,6 +31,13 @@ function showPlanets () {
         light.setPixelColor(loc[index], pix[index])
     }
 }
+input.buttonB.onEvent(ButtonEvent.Click, function () {
+    state = 0
+    pix = [light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100)), light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100)), light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100)), light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100))]
+    period = [Math.randomRange(10, 30), Math.randomRange(30, 80), Math.randomRange(50, 100), Math.randomRange(100, 200)]
+    state = 1
+    orrery()
+})
 input.buttonA.onEvent(ButtonEvent.Click, function () {
     if (0 == state) {
         state = 1
@@ -38,13 +45,6 @@ input.buttonA.onEvent(ButtonEvent.Click, function () {
     } else {
         state = 0
     }
-})
-input.buttonB.onEvent(ButtonEvent.Click, function () {
-    state = 0
-    pix = [light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100)), light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100)), light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100)), light.rgb(Math.randomRange(0, 100), Math.randomRange(0, 100), Math.randomRange(0, 100))]
-    period = [Math.randomRange(10, 30), Math.randomRange(30, 80), Math.randomRange(50, 100), Math.randomRange(100, 200)]
-    state = 1
-    orrery()
 })
 let x = 0
 let state = 0
